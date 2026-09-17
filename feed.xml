@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>我的小站</title>
+  <link>https://你的用户名.github.io/你的仓库名/</link>
+  <description>记录生活、学习与折腾，每天自动更新一点点。</description>
+  <language>zh-CN</language>
+  <item>
+  <title>每日更新 · 09月17日</title>
+  <link>https://你的用户名.github.io/你的仓库名/posts/daily.html</link>
+  <guid>https://你的用户名.github.io/你的仓库名/posts/daily.html</guid>
+  <pubDate>Thu, 17 Sep 2026 00:00:00 +0800</pubDate>
+  <description>本文由 GitHub Actions 定时任务自动生成，每天北京时间 06:00 左右更新。</description>
+</item>
+<item>
+  <title>我的开发环境备忘</title>
+  <link>https://你的用户名.github.io/你的仓库名/posts/我的开发环境备忘.html</link>
+  <guid>https://你的用户名.github.io/你的仓库名/posts/我的开发环境备忘.html</guid>
+  <pubDate>Thu, 17 Sep 2026 00:00:00 +0800</pubDate>
+  <description>记录一下常用的开发环境和命令，方便随时查阅。</description>
+</item>
+<item>
+  <title>欢迎来到我的小站</title>
+  <link>https://你的用户名.github.io/你的仓库名/posts/欢迎来到我的小站.html</link>
+  <guid>https://你的用户名.github.io/你的仓库名/posts/欢迎来到我的小站.html</guid>
+  <pubDate>Thu, 17 Sep 2026 00:00:00 +0800</pubDate>
+  <description>这是你的第一篇博客文章。博客基于 GitHub Pages + GitHub Actions 搭建， 每天会自动生成一篇「每日更新」文章（一言 + 生活冷知识 + 编程小贴士）。</description>
+</item>
+</channel>
+</rss>

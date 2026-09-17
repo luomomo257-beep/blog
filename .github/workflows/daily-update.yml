@@ -1,0 +1,41 @@
+# 每日自动更新：生成"每日更新"文章并重新构建站点，然后推回仓库
+# GitHub Pages 会在推送后自动部署（Settings → Pages → Deploy from branch）
+
+name: 每日自动更新
+
+on:
+  schedule:
+    # UTC 22:00 = 北京时间次日 06:00，每天一次
+    # 想改时间请编辑这里的 cron（cron 使用 UTC，北京时间 = UTC + 8 小时）
+    - cron: '0 22 * * *'
+  workflow_dispatch: {}   # 允许在 Actions 页面手动触发一次
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 生成每日文章并重建站点
+        run: python scripts/generate.py --auto
+
+      - name: 提交并推送（无变更时自动跳过提交）
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "每日自动更新 $(date -u +'%Y-%m-%d')"
+          git push

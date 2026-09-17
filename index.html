@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的小站 · 记录生活、学习与折腾，每天自动更新一点点。</title>
+<meta name="description" content="记录生活、学习与折腾，每天自动更新一点点。">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="alternate" type="application/rss+xml" title="我的小站" href="feed.xml">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">我的小站</a>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="feed.xml">RSS</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<section class="hero">
+  <h1>我的小站</h1>
+  <p>记录生活、学习与折腾，每天自动更新一点点。</p>
+</section>
+<section class="posts">
+  <h2 class="section-title">全部文章 <span class="count">(3)</span></h2>
+  <div class="filter-tabs" role="tablist">
+  <button class="filter-tab active" data-type="all">全部 <span class="count">3</span></button>
+  <button class="filter-tab" data-type="每日更新">每日更新 <span class="count">1</span></button>
+  <button class="filter-tab" data-type="编程">编程 <span class="count">1</span></button>
+  <button class="filter-tab" data-type="随笔">随笔 <span class="count">1</span></button>
+  </div>
+  <p class="empty" id="filter-empty" style="display:none">该类型下暂无文章。</p>
+  <a class="post-card" href="posts/daily.html" data-type="每日更新">
+  <div class="post-meta"><time datetime="2026-09-17">2026-09-17</time><span class="badge">每日更新</span></div>
+  <h3>每日更新 · 09月17日</h3>
+  <p class="post-excerpt">本文由 GitHub Actions 定时任务自动生成，每天北京时间 06:00 左右更新。</p>
+</a>
+<a class="post-card" href="posts/我的开发环境备忘.html" data-type="编程">
+  <div class="post-meta"><time datetime="2026-09-17">2026-09-17</time><span class="badge">编程</span></div>
+  <h3>我的开发环境备忘</h3>
+  <p class="post-excerpt">记录一下常用的开发环境和命令，方便随时查阅。</p>
+</a>
+<a class="post-card" href="posts/欢迎来到我的小站.html" data-type="随笔">
+  <div class="post-meta"><time datetime="2026-09-17">2026-09-17</time><span class="badge">随笔</span></div>
+  <h3>欢迎来到我的小站</h3>
+  <p class="post-excerpt">这是你的第一篇博客文章。博客基于 GitHub Pages + GitHub Actions 搭建， 每天会自动生成一篇「每日更新」文章（一言 + 生活冷知识 + 编程小贴士）。</p>
+</a>
+</section>
+<script>
+(function () {
+  try {
+    var tabs = document.querySelectorAll('.filter-tab');
+    var cards = document.querySelectorAll('.post-card');
+    var empty = document.getElementById('filter-empty');
+    if (!tabs.length || !cards.length) return;
+    function apply(type) {
+      var visible = 0;
+      for (var i = 0; i < cards.length; i++) {
+        var show = (type === 'all' || cards[i].getAttribute('data-type') === type);
+        cards[i].style.display = show ? '' : 'none';
+        if (show) visible++;
+      }
+      for (var j = 0; j < tabs.length; j++) {
+        tabs[j].className = tabs[j].getAttribute('data-type') === type
+          ? 'filter-tab active' : 'filter-tab';
+      }
+      if (empty) empty.style.display = visible ? 'none' : 'block';
+    }
+    for (var k = 0; k < tabs.length; k++) {
+      tabs[k].addEventListener('click', (function (t) {
+        return function () { apply(t.getAttribute('data-type')); };
+      })(tabs[k]));
+    }
+    apply('all');
+  } catch (e) { /* 筛选脚本异常时默认展示全部文章 */ }
+})();
+</script>
+</main>
+<footer class="site-footer">
+  <div class="wrap"><p>© 2026 博主 · 本站由 GitHub Actions 每日自动更新</p></div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的开发环境备忘</title>
+<meta name="description" content="记录生活、学习与折腾，每天自动更新一点点。">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="alternate" type="application/rss+xml" title="我的小站" href="../feed.xml">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">我的小站</a>
+    <nav>
+      <a href="../index.html">首页</a>
+      <a href="../feed.xml">RSS</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<article class="post">
+  <header>
+    <h1>我的开发环境备忘</h1>
+    <div class="post-meta"><time datetime="2026-09-17">2026-09-17</time> · 博主 · <span class="badge">编程</span></div>
+  </header>
+  <div class="post-content">
+<hr>
+<p>类型: 编程</p>
+<hr>
+<p>记录一下常用的开发环境和命令，方便随时查阅。</p>
+<h2>Python</h2>
+<ul>
+<li>管理多个项目依赖：<code>python -m venv .venv</code> 建虚拟环境，激活后 <code>pip install -r requirements.txt</code></li>
+<li>批量统计词频：<code>from collections import Counter</code></li>
+<li>排查安装报错：先看是不是 pip 版本问题，<code>python -m pip install --upgrade pip</code> 再重试</li>
+</ul>
+<h2>Git</h2>
+<table><thead><tr>
+<th>场景</th>
+<th>命令</th>
+</tr></thead><tbody>
+<tr>
+<td>改写上一次提交信息</td>
+<td><code>git commit --amend</code></td>
+</tr>
+<tr>
+<td>撤销提交但保留改动</td>
+<td><code>git reset --soft HEAD~1</code></td>
+</tr>
+<tr>
+<td>找回误删的未提交文件</td>
+<td><code>git checkout -- 文件名</code></td>
+</tr>
+<tr>
+<td>查看分支合并历史</td>
+<td><code>git log --oneline --graph</code></td>
+</tr>
+</tbody></table>
+<h2>前端</h2>
+<ul>
+<li>长列表滚动卡顿：给容器加 <code>content-visibility: auto</code></li>
+<li>图片加载提速：加 <code>loading=&quot;lazy&quot;</code> 和 <code>decoding=&quot;async&quot;</code></li>
+<li>flex/grid 间距：直接用 <code>gap</code>，别再写 margin hack</li>
+</ul>
+<blockquote>提示：这篇文章的类型是「编程」，可以在首页点筛选标签试试按类型查看文章。</blockquote>
+<hr>
+<p><em>本文为示例文章，发布后可以放心删除或改写。</em></p>
+  </div>
+  <nav class="post-nav"><a href="../index.html">← 返回首页</a></nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap"><p>© 2026 博主 · 本站由 GitHub Actions 每日自动更新</p></div>
+</footer>
+</body>
+</html>
