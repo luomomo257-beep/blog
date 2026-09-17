@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Day01・学习笔记</title>
+<meta name="description" content="记录生活、学习与折腾，偶尔更新一点点。">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="alternate" type="application/rss+xml" title="伦辛小站" href="../feed.xml">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">伦辛小站</a>
+    <nav>
+      <a href="../index.html">首页</a>
+      <a href="../feed.xml">RSS</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<article class="post">
+  <header>
+    <h1>Python Day01・学习笔记</h1>
+    <div class="post-meta"><time datetime="2026-09-17">2026-09-17</time> · lencin · <span class="badge">python</span></div>
+  </header>
+  <div class="post-content">
+<hr>
+<p>类型: python</p>
+<hr>
+<blockquote>主题：环境搭建 + Python 起步（变量 / 类型 / 输入输出）</blockquote>
+<hr>
+<h2>一、学习目标</h2>
+<ol>
+<li>什么是 venv？为什么每个项目都要建一个？能一条命令建好并激活吗？</li>
+<li>int /float/str /bool 四种类型怎么互相转换？<code>input()</code> 读进来的一定是什么类型？</li>
+<li>f-string 怎么写？<code>print()</code> 怎么排版输出？中文不乱码的条件是什么？</li>
+</ol>
+<hr>
+<h2>二、知识点总结</h2>
+<h3>2.1 虚拟环境 venv</h3>
+<ul>
+<li><strong>是什么</strong>：Python 自带的虚拟环境工具，为每个项目创建独立的包环境。</li>
+<li><strong>为什么用</strong>：不同项目依赖的包版本互不干扰，避免污染系统 Python，也避免系统装包权限问题。</li>
+<li><strong>命令</strong>（Windows / PowerShell）：</li>
+</ul>
+<pre><code>\# 创建（在项目目录下）
+
+python -m venv .venv
+
+\# 激活
+
+.venv\Scripts\Activate.ps1
+
+\# 验证：命令行前面出现 (.venv) 即成功
+
+python --version</code></pre>
+<blockquote>⚠️ 装任何包（pip install）都必须在激活状态下执行。</blockquote>
+<h3>2.2 变量与数据类型</h3>
+<table><thead><tr>
+<th>类型</th>
+<th>说明</th>
+<th>示例</th>
+<th>转换函数</th>
+</tr></thead><tbody>
+<tr>
+<td><code>int</code></td>
+<td>整数</td>
+<td><code>25</code></td>
+<td><code>int(x)</code></td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>浮点数</td>
+<td><code>25.0</code></td>
+<td><code>float(x)</code></td>
+</tr>
+<tr>
+<td><code>str</code></td>
+<td>字符串</td>
+<td><code>&quot;深圳&quot;</code></td>
+<td><code>str(x)</code></td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td>布尔</td>
+<td><code>True</code> / <code>False</code></td>
+<td><code>bool(x)</code></td>
+</tr>
+</tbody></table>
+<p><strong>核心规则</strong>：</p>
+<ul>
+<li>变量命名：字母 / 下划线开头，不能数字开头，不用关键字。</li>
+<li><code>input()</code> 返回的<strong>永远是字符串</strong>，做数学运算前必须转换。</li>
+<li><code>bool()</code> 转换：空值（0、""、None、空容器）为 <code>False</code>，其余为 <code>True</code>。</li>
+</ul>
+<h3>2.3 输入输出与 f-string</h3>
+<pre><code>name = input(&quot;请输入姓名：&quot;)        # input 一定返回 str
+
+age = int(input(&quot;请输入年龄：&quot;))     # 需要数字时手动转换
+
+\# f-string：{} 内直接放变量或表达式
+
+print(f&quot;我是{name}，今年{age}岁，来自深圳，喜欢写代码&quot;)
+
+\# 字面花括号用双写转义
+
+print(f&quot;输出一对花括号：{{}}&quot;)       # -&gt; 输出一对花括号：{}</code></pre>
+<p><strong>中文不乱码的条件</strong>：Python 3 默认 UTF-8，关键是<strong>编辑器保存文件时选 UTF-8 编码</strong>。</p>
+<hr>
+<h2>三、测试作业（3 道）与参考实现</h2>
+<h3>作业 1・环境验证</h3>
+<p>在已激活的 venv 里运行 hello.py，输出「Hello, 全栈 AI!」。</p>
+<pre><code>\# hello.py
+
+print(&quot;Hello, 全栈 AI!&quot;)</code></pre>
+<p>验收：<code>python hello.py</code> → <code>Hello, 全栈 AI!</code></p>
+<h3>作业 2・个人名片小程序</h3>
+<pre><code>\# card.py
+
+name = &quot;小明&quot;
+
+age = 25
+
+city = &quot;深圳&quot;
+
+hobby = input(&quot;请输入你的爱好：&quot;)
+
+print(f&quot;我是{name}，今年{age}岁，来自{city}，喜欢{hobby}&quot;)</code></pre>
+<p>验收：运行后按提示输入爱好，输出一行完整自我介绍。</p>
+<h3>作业 3・温度转换器</h3>
+<pre><code>\# temp.py
+
+c = float(input(&quot;请输入摄氏温度：&quot;))   # 必须 float()，否则 &quot;25&quot; \* 1.8 报错
+
+f = c \* 1.8 + 32
+
+print(f&quot;{f:.1f}°F&quot;)                    # 保留 1 位小数</code></pre>
+<p>验收：输入 <code>25</code> → 输出 <code>77.0°F</code>。</p>
+<hr>
+<h2>四、自测 4 题与答案</h2>
+<table><thead><tr>
+<th>#</th>
+<th>题目</th>
+<th>答案</th>
+</tr></thead><tbody>
+<tr>
+<td>①</td>
+<td><code>&quot;10&quot; + 5</code> 会报错还是输出 15？</td>
+<td><strong>报错</strong>。str 和 int 不能直接相加，需先 <code>int(&quot;10&quot;)</code> 或 <code>str(5)</code></td>
+</tr>
+<tr>
+<td>②</td>
+<td><code>bool(0)</code> 和 <code>bool(&quot;0&quot;)</code> 分别是？</td>
+<td><code>bool(0)</code> = <strong>False</strong>；<code>bool(&quot;0&quot;)</code> = <strong>True</strong>（非空字符串都为 True）</td>
+</tr>
+<tr>
+<td>③</td>
+<td><code>x = 5</code>，<code>if x = 5:</code> 合法吗？</td>
+<td><strong>不合法</strong>。<code>=</code> 是赋值，条件判断要用 <code>==</code>，直接语法错误</td>
+</tr>
+<tr>
+<td>④</td>
+<td>f-string 里输出字面花括号 <code>{}</code>？</td>
+<td>写两个花括号 <code>{{}}</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>五、易错点（今日踩坑记录）</h2>
+<ol>
+<li><strong>venv 没激活就装包</strong> → 包装进了系统 Python，项目间互相污染。</li>
+<li><strong>input () 忘记类型转换</strong> → <code>&quot;25&quot; * 1.8</code> 直接 TypeError。</li>
+<li><code>=</code><strong>&#x20;与&#x20;</strong><code>==</code><strong>&#x20;混用</strong> → 赋值和比较不分，语法错误。</li>
+<li><strong>中文乱码</strong> → 编辑器保存编码不是 UTF-8。</li>
+<li><strong>类型混加</strong> → str 和 int 不能直接 <code>+</code>。</li>
+</ol>
+<hr>
+<h2>六、完成标准确认</h2>
+<ul>
+<li>[x] 3 道作业全部能运行，输出符合预期</li>
+<li>[x] 自测 4 题答对 3 题以上</li>
+<li>[x] 所有代码运行在 venv 内，未污染系统 Python</li>
+<li>[x] exercises 仓库已创建，4 个文件已提交（含 .gitignore）</li>
+</ul>
+<hr>
+<h2>七、学习资源</h2>
+<ul>
+<li>Python 官方教程：<a href="https://docs.python.org/zh-cn/3/tutorial/introduction.html">https://docs.python.org/zh-cn/3/tutorial/introduction.html</a></li>
+</ul>
+<hr>
+  </div>
+  <nav class="post-nav"><a href="../index.html">← 返回首页</a></nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap"><p>© 2026 lencin · 本站由 GitHub Actions 每日自动更新</p></div>
+</footer>
+</body>
+</html>

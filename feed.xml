@@ -13,18 +13,11 @@
   <description>本文由 GitHub Actions 定时任务自动生成，每天北京时间 06:00 左右更新。</description>
 </item>
 <item>
-  <title>我的开发环境备忘</title>
-  <link>https://luomomo257-beep.github.io/blog/posts/我的开发环境备忘.html</link>
-  <guid>https://luomomo257-beep.github.io/blog/posts/我的开发环境备忘.html</guid>
+  <title>Python Day01・学习笔记</title>
+  <link>https://luomomo257-beep.github.io/blog/posts/环境搭建 + Python 起步.html</link>
+  <guid>https://luomomo257-beep.github.io/blog/posts/环境搭建 + Python 起步.html</guid>
   <pubDate>Thu, 17 Sep 2026 00:00:00 +0800</pubDate>
-  <description>记录一下常用的开发环境和命令，方便随时查阅。</description>
-</item>
-<item>
-  <title>欢迎来到我的小站</title>
-  <link>https://luomomo257-beep.github.io/blog/posts/欢迎来到我的小站.html</link>
-  <guid>https://luomomo257-beep.github.io/blog/posts/欢迎来到我的小站.html</guid>
-  <pubDate>Thu, 17 Sep 2026 00:00:00 +0800</pubDate>
-  <description>这是你的第一篇博客文章。博客基于 GitHub Pages + GitHub Actions 搭建， 每天会自动生成一篇「每日更新」文章（一言 + 生活冷知识 + 编程小贴士）。</description>
+  <description>主题：环境搭建 + Python 起步（变量 / 类型 / 输入输出）</description>
 </item>
 </channel>
 </rss>
