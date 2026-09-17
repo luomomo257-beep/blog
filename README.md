@@ -40,25 +40,7 @@
 &#x20;   └── daily-update.yml    # 每日定时任务
 ```
 
-## 一分钟部署
 
-1. **建仓库**：在 GitHub 新建一个仓库（示例 `my-blog`）。如果希望博客地址是
-
-   `https://<你的用户名>.github.io/`，仓库名必须叫 `<你的用户名>.github.io`。
-
-2. **推送**：把本目录所有文件推送到仓库 main 分支。
-
-3. **开启 Pages**：仓库 Settings → Pages → Source 选
-
-   **Deploy from a branch** → 分支选 `main`、目录选 `/ (root)` → Save。
-
-   约 1 分钟后，`https://<你的用户名>.github.io/<仓库名>/`（或 `用户名.github.io`）即可访问。
-
-4. **开启定时任务**：仓库 Actions 页面如果提示要启用，点一下启用即可。
-
-   定时任务每天 UTC 22:00（北京时间 06:00）自动运行；也可在
-
-   Actions → 每日自动更新 → Run workflow 手动触发测试。
 
 ## 常用操作
 
