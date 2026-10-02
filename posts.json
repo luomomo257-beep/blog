@@ -1,6 +1,13 @@
 [
   {
     "slug": "daily",
+    "title": "每日更新 · 10月02日",
+    "date": "2026-10-02",
+    "excerpt": "本文由 GitHub Actions 定时任务自动生成，每天北京时间 06:00 左右更新。",
+    "category": "每日更新"
+  },
+  {
+    "slug": "daily",
     "title": "每日更新 · 10月01日",
     "date": "2026-10-01",
     "excerpt": "本文由 GitHub Actions 定时任务自动生成，每天北京时间 06:00 左右更新。",
